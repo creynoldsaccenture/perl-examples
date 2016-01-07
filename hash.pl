@@ -7,4 +7,7 @@ use Data::Dumper;
 my @array = ('Orange', 'Apple', 'Banana', 'Cherry');
 my %hash = ('foo' => 'bar', 'baz' => 'qux');
 
-print "Array: \n\n", Dumper (\@array), "\nHash (associative array):\n\n", Dumper (\%hash);
+print "Array: \n\n",
+      Dumper (\@array),
+      "\nHash (associative array):\n\n",
+      Dumper (\%hash);
