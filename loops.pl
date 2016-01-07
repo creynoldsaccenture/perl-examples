@@ -61,8 +61,8 @@ my $array_loop_length = scalar @array - 1;
 
 foreach my $index (0 .. $array_loop_length) {
     print "\"$index\"",
-    " => ",
-    $array[$index],
-    $index < $array_loop_length ? ", " : "", # This is a ternary statement (shorthand for if .. then (?) .. else (:))
-    "\n";
+          " => ",
+          $array[$index],
+          $index < $array_loop_length ? ", " : "", # This is a ternary statement (shorthand for if .. then (?) .. else (:))
+          "\n";
 }
