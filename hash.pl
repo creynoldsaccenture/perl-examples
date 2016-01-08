@@ -55,14 +55,19 @@ print "\n\nJoined: ", join(', ', @names);
 # In list context, the reverse function returns a list in reverse order.
 print "\n\nReversed (array): ", reverse(@names);
 
-# In scalar context, reverse concatenates the whole list together and then reverses it as a single word.
+# In scalar context, reverse concatenates the whole list together and then reverses it as a single word
 print "\n\nReversed (scalar): ", scalar reverse(@names);
 
 # Map example
-# The map function takes an array as input and applies an operation to every scalar $_ in the array and returns a new modified array.
+# The map function takes an array as input and applies an operation to every scalar $_ in the array and returns a new modified array
 print "\n\nMap (convert to uppercase): ", join ', ', map { uc $_ } @names;
 print "\n\nMap (convert to lowercase): ", join ', ', map { lc $_ } @names;
 
 # Grep examples
 # Grep filters an array (returning a new array) based on a given condition
 print "\n\nGrep (return names with 5 characters): ", join ', ', grep { length $_ == 5 } @names;
+
+# Grep can be used to quickly check if an array contains a given value
+# 'eq' is used here, as it's a string comparison ('==' is for number comparison)
+# N.B. string comparators are CASE SENSITIVE!
+print "\n\nCheck for value in array: ", scalar grep { $_ eq 'Alice' } @names; # returns 1 (true)
