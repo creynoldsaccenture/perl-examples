@@ -16,7 +16,7 @@ sub csv {
     return join(', ', shift @_);
 }
 
-print "\n\nHyphenate sub: ", hyphenate('foo'), "\n\nCSV sub: ", csv(('foo', 'bar', 'baz', 'qux'));
+print "\nHyphenate sub: ", hyphenate('foo'), "\n\nCSV sub: ", csv(('foo', 'bar', 'baz', 'qux'));
 
 # Arguments should be unpacked as Perl calls by reference (original variable values will be overwritten!)
 # First method using $_ and numerical keys
@@ -39,10 +39,27 @@ sub a_different_function {
 } 
 
 # Fourth method for accepting a large number of sub arguments via a hash
+another_different_function('firstVar' => 'foo', 'secondVar' => 'bar');
+
 sub another_different_function {
     my %args = @_;
-    my $first_var  = $args{'firstVar'};
-    my $second_var = $args{'secondVar'};
+    my $first_var  = $args{"firstVar"};
+    my $second_var = $args{"secondVar"};
 }
 
-another_different_function({ 'firstVar' => 'foo', 'secondVar' => 'bar' });
+# Returning values
+# Subroutines can return different variable types based on the context in which it is being evaluated
+# i.e. if being evaluated as a scalar, returns a scalar value
+sub contextual_subroutine {
+    # Caller wants a list
+    return ('foo', 'bar', 'baz') if wantarray;
+
+    # Caller wants a scalar
+    return 42;
+}
+
+my @array = contextual_subroutine();
+print "\n\nArray context: ", @array;
+
+my $scalar = contextual_subroutine();
+print "\n\nScalar context: ", $scalar;
