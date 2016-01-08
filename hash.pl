@@ -35,6 +35,7 @@ print "\n\nPushed: ";
 
 push @names, 'Fred', 'Alice';
 
+# Array variable is in double quotes so that array values will be separated by spaces
 print "@names";
 
 # Shift extracts and returns the first value in an array
@@ -45,7 +46,6 @@ print "\n\nUnshifted: ";
 
 unshift @names, 'Mandy';
 
-# Array variable is in double quotes so that array values will be separated by spaces
 print "@names";
 
 # Join example
@@ -57,3 +57,8 @@ print "\n\nReversed (array): ", reverse(@names);
 
 # In scalar context, reverse concatenates the whole list together and then reverses it as a single word.
 print "\n\nReversed (scalar): ", scalar reverse(@names);
+
+# Map example
+# The map function takes an array as input and applies an operation to every scalar $_ in this array.
+print "\n\nMap (convert to uppercase): ", join ', ', map { uc $_ } @names;
+print "\n\nMap (convert to lowercase): ", join ', ', map { lc $_ } @names;
