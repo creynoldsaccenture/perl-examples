@@ -62,3 +62,7 @@ print "\n\nReversed (scalar): ", scalar reverse(@names);
 # The map function takes an array as input and applies an operation to every scalar $_ in the array and returns a new modified array.
 print "\n\nMap (convert to uppercase): ", join ', ', map { uc $_ } @names;
 print "\n\nMap (convert to lowercase): ", join ', ', map { lc $_ } @names;
+
+# Grep examples
+# Grep filters an array (returning a new array) based on a given condition
+print "\n\nGrep (return names with 5 characters): ", join ', ', grep { length $_ == 5 } @names;
