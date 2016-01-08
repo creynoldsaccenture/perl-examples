@@ -59,6 +59,6 @@ print "\n\nReversed (array): ", reverse(@names);
 print "\n\nReversed (scalar): ", scalar reverse(@names);
 
 # Map example
-# The map function takes an array as input and applies an operation to every scalar $_ in this array.
+# The map function takes an array as input and applies an operation to every scalar $_ in the array and returns a new modified array.
 print "\n\nMap (convert to uppercase): ", join ', ', map { uc $_ } @names;
 print "\n\nMap (convert to lowercase): ", join ', ', map { lc $_ } @names;
