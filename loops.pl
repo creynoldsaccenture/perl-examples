@@ -66,3 +66,12 @@ foreach my $index (0 .. $array_loop_length) {
           $index < $array_loop_length ? ", " : "", # This is a ternary statement (shorthand for if .. then (?) .. else (:))
           "\n";
 }
+
+# You can't iterate over hashes, but you can iterate over their keys
+my %countries = ('Europe' => 'UK', 'North America' => 'Canada', 'Asia' => 'India');
+
+print "\n\nForeach loop (with hash keys):\n";
+
+foreach my $key (keys %countries) {
+    print $key, ": ", $countries{$key}, "\n";
+}
