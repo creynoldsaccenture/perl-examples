@@ -49,6 +49,11 @@ unshift @names, 'Mandy';
 print "@names";
 
 # Join example
-print "\n\nJoin: ", join(', ', @names);
+print "\n\nJoined: ", join(', ', @names);
 
+# Reverse examples
+# In list context, the reverse function returns a list in reverse order.
+print "\n\nReversed (array): ", reverse(@names);
 
+# In scalar context, reverse concatenates the whole list together and then reverses it as a single word.
+print "\n\nReversed (scalar): ", scalar reverse(@names);
