@@ -71,3 +71,10 @@ print "\n\nGrep (return names with 5 characters): ", join ', ', grep { length $_
 # 'eq' is used here, as it's a string comparison ('==' is for number comparison)
 # N.B. string comparators are CASE SENSITIVE!
 print "\n\nCheck for value in array: ", scalar grep { $_ eq 'Alice' } @names; # returns 1 (true)
+
+# Sort example
+# Sort defaults to returning a given input in alphabetical (lexical) order
+my @numbers = (1..24);
+
+print "\n\nSort names (alphabetical): ", join ', ', sort @names;
+print "\n\nSort numbers (alphabetical): ", join ', ', sort @numbers;
