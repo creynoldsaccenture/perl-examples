@@ -24,6 +24,7 @@ foreach my $key (keys %countries) {
 print "\n\nArray functions:\n\n";
 
 my @names = ('Bob', 'Dave', 'Gary', 'Will');
+my @numbers = (1..24);
 
 print 'Sample array: ', "@names";
 
@@ -74,7 +75,6 @@ print "\n\nCheck for value in array: ", scalar grep { $_ eq 'Alice' } @names; # 
 
 # Sort example
 # Sort defaults to returning a given input in alphabetical (lexical) order
-my @numbers = (1..24);
-
+# Sort can also be passed a subroutine (function)
 print "\n\nSort names (alphabetical): ", join ', ', sort @names;
 print "\n\nSort numbers (alphabetical): ", join ', ', sort @numbers;
