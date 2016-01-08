@@ -11,3 +11,44 @@ print "Array: \n\n",
       Dumper (\@array),
       "\nHash (associative array):\n\n",
       Dumper (\%hash);
+
+# You can't iterate over hashes, but you can iterate over their keys
+my %countries = ('Europe' => 'UK', 'North America' => 'Canada', 'Asia' => 'India');
+
+print "\n\nForeach loop (with hash keys):\n\n";
+
+foreach my $key (keys %countries) {
+    print $key, ": ", $countries{$key}, "\n";
+}
+
+print "\n\nArray functions:\n\n";
+
+my @names = ('Bob', 'Dave', 'Gary', 'Will');
+
+print 'Sample array: ', "@names";
+
+# Pop extracts and returns the final element of an array
+print "\n\nPopped: ", pop @names;
+
+# Push appends values to an array
+print "\n\nPushed: ";
+
+push @names, 'Fred', 'Alice';
+
+print "@names";
+
+# Shift extracts and returns the first value in an array
+print "\n\nShifted: ", shift @names;
+
+# Unhift prepends values to an array
+print "\n\nUnshifted: ";
+
+unshift @names, 'Mandy';
+
+# Array variable is in double quotes so that array values will be separated by spaces
+print "@names";
+
+# Join example
+print "\n\nJoin: ", join(', ', @names);
+
+
